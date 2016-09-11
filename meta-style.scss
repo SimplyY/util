@@ -1,0 +1,64 @@
+@mixin silver-border-top {
+    border-top: 1.5px solid $silver;
+}
+
+@mixin reset-link-style($color: black) {
+    color: $color;
+    text-decoration: none;
+}
+.reset-link {
+    @include reset-link-style;
+}
+
+@mixin box-grey-shadow($width: 15px){
+    box-shadow: 0 2px $width grey;
+}
+
+@mixin vertical-center($max-width){
+    max-width: $max-width;
+    margin: 0 auto;
+}
+
+@mixin arrow-char-style($padding-v, $font-weight: 500) {
+    padding: 0 $padding-v;
+    font-family: "Lucida Grande", "sans-serif";
+    font-weight: $font-weight
+}
+
+@mixin translate3d-t($x:0, $y:0, $z:0, $time: .32s){
+    transition: transform $time ease;
+    transform: translate3d($x, $y, $z);
+}
+
+@mixin be-brey-animation(){
+    animation: be-grey .4s ease-out 0s normal forwards;
+}
+@keyframes be-grey {
+    from {
+        background-color: $light-silver;
+    }
+    to {
+        background-color: $silver;
+    }
+}
+
+@mixin anchor-highlight-animation($time){
+    animation: anchor-change $time ease-in 0s normal forwards;
+}
+@keyframes anchor-change {
+    from {
+        color: Brown;
+    }
+    to {
+        color: black;
+    }
+}
+
+
+.clear-float:after {
+    content:".";
+    display:block;
+    height:0;
+    visibility:hidden;
+    clear:both;
+}
